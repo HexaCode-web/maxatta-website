@@ -1,10 +1,13 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-image: url(images/background.jpg);
-  background-size: cover;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: left;
   width: 100vw;
-  height: 98vh;
+  height: 100%;
   margin: 0px;
   padding: 0px;
   font-family: "montserrat", serif;
@@ -61,15 +64,17 @@ nav ul {
 }
 main {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   height: 90%;
+  margin-left: 25%;
+  width: 75%;
+  gap: 20px;
 }
-.empty {
-  min-width: 25%;
+.section {
+  height: 100vh;
 }
-.content {
-  padding-right: 20px;
-  min-width: 75%;
+#AboutUs {
+  height: 70vh;
 }
 .headline {
   color: white;
@@ -85,10 +90,12 @@ p {
 .content a:hover {
   border-bottom: 1px solid white;
 }
+
 .info {
   min-height: 150px;
   display: flex;
   padding-left: 130px;
+  padding-right: 10px;
   border: 3px solid #9a9a9a;
   align-items: center;
 }
@@ -138,30 +145,49 @@ a {
 }
 form {
   height: 250px;
-  max-width: 450px;
-  gap: 10px;
-  display: flex;
-  flex-direction: column;
+  max-width: 500px;
+  grid-gap: 20px;
+  display: grid;
+  grid-template-areas:
+    "FName LName"
+    "Email Email"
+    "Subject Subject"
+    "Message Message"
+    "submit submit";
   color: white;
   margin-bottom: 40px;
 }
-.item {
-  display: flex;
-  align-items: flex-end;
-  gap: 5px;
+#Message {
+  grid-area: Message;
+}
+#Subject {
+  grid-area: Subject;
+}
+#Email {
+  grid-area: Email;
+}
+#FName {
+  grid-area: FName;
+}
+#LName {
+  grid-area: LName;
+}
+#submit {
+  grid-area: submit;
 }
 input,
 textarea {
+  margin-top: 10px;
   background-color: transparent;
   height: 30px;
   color: white;
   font-size: 18px;
   border: 0;
-  border-bottom: 2px solid #828282;
+  border-bottom: 2px solid white;
 }
 textarea {
   resize: none;
-  width: 312px;
+  width: 100%;
   height: 51px;
 }
 input[type="submit"] {
@@ -172,7 +198,6 @@ input[type="submit"] {
   color: white;
   font-size: 18px;
   border-bottom: none;
-  margin-top: 30px;
   cursor: pointer;
   transition: all 0.3s ease;
   height: 50px;
@@ -181,7 +206,13 @@ input[type="submit"]:hover {
   background: #fff;
   color: #1b1c1e;
 }
-
+.g-recaptcha {
+  margin: auto;
+}
 input:focus {
   outline: 1px solid #828282;
+}
+form .item {
+  display: flex;
+  flex-direction: column;
 }

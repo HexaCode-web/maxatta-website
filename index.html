@@ -20,18 +20,17 @@
         <div class="logo"><img src="images/Logo.png" /></div>
         <ul>
           <li class="ListItem">
-            <a href="#">Home</a>
+            <a href="#Home">Home</a>
             <div class="outline inactive"></div>
           </li>
-          <li class="ListItem"><a href="./investors.html">Investors</a></li>
-          <li class="ListItem"><a href="./Connect.html">Connect</a></li>
-          <li class="ListItem"><a href="./AboutUs.html">About Us</a></li>
+          <li class="ListItem"><a href="#investors">Investors</a></li>
+          <li class="ListItem"><a href="#Connect">Connect</a></li>
+          <li class="ListItem"><a href="#AboutUs">About Us</a></li>
         </ul>
       </nav>
     </header>
     <main>
-      <div class="empty"></div>
-      <div class="content">
+      <div class="section" id="home">
         <h1 class="headline stroke">
           The world's first RPA technology focused on actionable intelligence
         </h1>
@@ -51,7 +50,73 @@
           bottom and top line optimisation.
         </p>
       </div>
+      <div class="section" id="investors">
+        <h1 class="headline stroke">Investors</h1>
+        <p class="stroke">
+          Maxatta is now engaged on both Enterprise and SaaS business models. We
+          are offering SSaaS and Actionable Intelligence Enterprise Deployments.
+        </p>
+        <p class="stroke">
+          For more information on our current product status and markets we are
+          helping address please reach out to
+          <a href="mailto:management@maxatta.com">management@maxatta.com</a>.
+        </p>
+      </div>
+      <div class="section" id="Connect">
+        <h1 class="headline">Connect with Maxatta</h1>
+        <p>
+          We work with both buy and sell side organisations. Please submit your
+          details below and Maxatta sales will be in touch to discuss our use
+          cases, demos and automation RoI.
+        </p>
+        <form method="post" action="mail.php">
+          <div class="item" id="FName">
+            <label for="Fname">Your First Name:</label>
+            <input type="text" name="Fname" id="Fname" required />
+          </div>
+          <div class="item" id="LName">
+            <label for="Lname">Your Last Name:</label>
+            <input type="text" name="Lname" id="Lname" required />
+          </div>
+          <div class="item" id="Email">
+            <label for="email">Your Email:</label>
+            <input type="email" name="email" id="email" required />
+          </div>
+          <div class="item" id="Subject">
+            <label for="subject">Your Subject:</label>
+            <input type="text" name="subject" id="subject" required />
+          </div>
+          <div class="item" id="Message">
+            <label for="message">Your Message:</label>
+            <textarea name="message"></textarea>
+          </div>
+          <input type="submit" id="submit" name="submit" value="Submit" />
+        </form>
+      </div>
+      <div class="section" id="AboutUs">
+        <div class="content">
+          <h1 class="headline stroke">About Us</h1>
+          <p class="stroke">
+            We are a team of former hedge fund managers, traders, technologists
+            and academics based in London. Our mission is to create actionable
+            intelligence for decision makers across front office using RPA..
+          </p>
+          <p>
+            <a href="mailto:sales@maxatta.com">sales@maxatta.com </a>
+          </p>
+        </div>
+      </div>
     </main>
+    <div class="info">
+      <p>
+        Maxatta Ltd <br />IDEA Building <br />69 Wilson Street<br />
+        London, EC2AA 3AA
+      </p>
+      <div class="links">
+        <a href="#"><img src="images/linkedin.png" alt="" /></a>
+        <a href="#"><img src="images/twitter.jpg" alt="" /></a>
+      </div>
+    </div>
     <footer>
       <div class="footerContent">
         <ul>
