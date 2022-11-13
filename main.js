@@ -1,5 +1,6 @@
 const navItems = Array.from(document.querySelectorAll(".ListItem"));
 const focusEL = document.querySelector(".outline");
+const width = screen.width;
 navItems.forEach((item) => {
   item.addEventListener("mouseover", () => {
     focusEL.classList.remove("inactive");
@@ -20,3 +21,9 @@ navItems2.forEach((item) => {
     focusEL2.classList.add("inactive");
   });
 });
+if (width < 500) {
+  const list = Array.from(document.getElementsByClassName("separator"));
+  list.forEach((element) => {
+    element.style.display = "none";
+  });
+}

@@ -13,6 +13,7 @@
       rel="stylesheet"
     />
     <script src="main.js" defer></script>
+    <script src="mainPage.js" defer></script>
   </head>
   <body>
     <header>
@@ -90,7 +91,24 @@
             <label for="message">Your Message:</label>
             <textarea name="message"></textarea>
           </div>
-          <input type="submit" id="submit" name="submit" value="Submit" />
+          <span class="text">Please Prove That You Aren't A Robot</span>
+          <div class="item" id="recaptcha">
+            <div id="reload"><img src="images/relod.png" /></div>
+            <div class="Fnumber"></div>
+            <div class="op">-</div>
+            <div class="Snumber"></div>
+            <div>=</div>
+            <input type="text" class="result" maxlength="2" />
+          </div>
+          <span class="status"></span>
+          <input
+            type="submit"
+            class="inactive"
+            id="submit"
+            name="submit"
+            value="Submit"
+            disabled
+          />
         </form>
       </div>
       <div class="section" id="AboutUs">
@@ -117,6 +135,26 @@
         <a href="#"><img src="images/twitter.jpg" alt="" /></a>
       </div>
     </div>
+    <main>
+      <div class="section">
+        <h1 class="headline">Legal Disclaimer</h1>
+        <p>XXX</p>
+        <p>XX</p>
+        <p>XXX</p>
+      </div>
+      <div class="section">
+        <h1 class="headline">Privacy Policy</h1>
+        <p>XXX</p>
+        <p>XX</p>
+        <p>XXX</p>
+      </div>
+      <div class="section">
+        <h1 class="headline">Terms of Service</h1>
+        <p>XXX</p>
+        <p>XX</p>
+        <p>XXX</p>
+      </div>
+    </main>
     <footer>
       <div class="footerContent">
         <ul>
@@ -142,6 +180,3 @@
     </footer>
   </body>
 </html>
-<!-- questions to ask the client 
- what is the (white paper and demo video).
-what to write in Privacy Policy Terms of Service Legal Disclaimer-->

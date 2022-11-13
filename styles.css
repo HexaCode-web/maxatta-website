@@ -7,6 +7,7 @@ body {
   background-repeat: no-repeat;
   background-position: left;
   width: 100vw;
+  min-height: 100vh;
   height: 100%;
   margin: 0px;
   padding: 0px;
@@ -68,23 +69,20 @@ main {
   height: 90%;
   margin-left: 25%;
   width: 75%;
-  gap: 20px;
+  gap: 100px;
 }
-.section {
-  height: 100vh;
-}
-#AboutUs {
-  height: 70vh;
+#Connect {
+  margin-bottom: 250px;
 }
 .headline {
-  color: white;
+  color: #d9d9d9;
   font-size: 2.6rem;
   font-weight: 600;
 }
 p {
   margin-top: 33px;
   width: 95%;
-  color: white;
+  color: #d9d9d9;
   font-size: 1.2rem;
 }
 .content a:hover {
@@ -143,6 +141,7 @@ a {
 .inactive {
   opacity: 0;
 }
+
 form {
   height: 250px;
   max-width: 500px;
@@ -153,6 +152,9 @@ form {
     "Email Email"
     "Subject Subject"
     "Message Message"
+    "text text"
+    "recaptcha recaptcha"
+    "status status"
     "submit submit";
   color: white;
   margin-bottom: 40px;
@@ -190,6 +192,54 @@ textarea {
   width: 100%;
   height: 51px;
 }
+
+input[type="submit"]:hover {
+  background: #fff;
+  color: #1b1c1e;
+}
+#recaptcha {
+  margin: 0 auto;
+  width: 70%;
+  height: 50px;
+  background-color: #c9c9c9;
+  border: 2px dashed #dddddd;
+  border-radius: 10px;
+  grid-area: recaptcha;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+#reload {
+  margin-right: 20px;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+}
+#reload img {
+  width: 100%;
+  height: 100%;
+}
+.result {
+  margin: 0;
+  text-align: center;
+  width: 65px;
+  height: 30px;
+  background-color: #ffffff;
+  color: black;
+  border-radius: 10px;
+}
+input:focus {
+  outline: 1px solid #828282;
+}
+form .item {
+  display: flex;
+  flex-direction: column;
+}
 input[type="submit"] {
   margin: auto;
   width: 150px;
@@ -198,21 +248,105 @@ input[type="submit"] {
   color: white;
   font-size: 18px;
   border-bottom: none;
-  cursor: pointer;
   transition: all 0.3s ease;
   height: 50px;
 }
-input[type="submit"]:hover {
-  background: #fff;
-  color: #1b1c1e;
+.text {
+  grid-area: text;
 }
-.g-recaptcha {
-  margin: auto;
+.status,
+.text {
+  font-size: 1.5rem;
+  grid-area: status;
+  text-align: center;
+  color: green;
+  font-weight: 600;
 }
-input:focus {
-  outline: 1px solid #828282;
+.text {
+  grid-area: text;
+  color: white;
 }
-form .item {
-  display: flex;
-  flex-direction: column;
+.error {
+  color: red;
+}
+.inactive {
+  opacity: none;
+}
+@media screen and (max-width: 450px) {
+  html {
+    overflow-x: hidden;
+    font-size: 10px;
+    max-width: 500px;
+  }
+  .logo,
+  .logo img {
+    max-width: 75px;
+  }
+  body {
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: auto;
+  }
+  main {
+    margin: 0;
+  }
+  header {
+    width: 100%;
+  }
+  nav ul {
+    margin-left: 0;
+    gap: 25px;
+  }
+  form {
+    grid-template-areas:
+      "FName"
+      "LName"
+      "Email"
+      "Subject"
+      "Message"
+      "text"
+      "recaptcha"
+      "status"
+      "submit";
+  }
+  form label {
+    font-size: 1.2rem;
+  }
+  #reload {
+    margin: 0;
+  }
+  .info {
+    min-height: 200px;
+    display: flex;
+    border: 3px solid #9a9a9a;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .info p {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .info img {
+    width: 40px;
+  }
+  footer {
+    width: 100%;
+  }
+  .footerContent,
+  footer {
+    border: none;
+  }
+  .footerContent ul {
+    padding: 0;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1rem;
+  }
 }
