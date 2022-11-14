@@ -484,6 +484,7 @@ a:hover {
   nav ul {
     margin-left: 0;
     gap: 25px;
+    font-size: 11px;
   }
   .shapeContainer {
     display: flex;
