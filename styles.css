@@ -484,7 +484,9 @@ a:hover {
     width: 194px;
     margin-top: 10px;
   }
-
+  #Connect {
+    margin-top: 70px;
+  }
   .shape p {
     width: 100%;
     font-size: 1.5rem;
