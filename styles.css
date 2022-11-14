@@ -95,7 +95,7 @@ nav .logo img {
 }
 nav ul {
   margin-left: auto;
-  margin-right: 10px;
+  margin-right: 40px;
   display: flex;
   list-style: none;
   gap: 35px;
@@ -156,6 +156,7 @@ main {
   flex-direction: column;
   height: 90%;
   margin: auto;
+  margin-top: 120px;
   width: 80%;
   gap: 100px;
 }
@@ -225,6 +226,26 @@ p {
 .photos img {
   width: 185px;
   height: 85px;
+  cursor: pointer;
+}
+.overlayIMG {
+  width: 80%;
+  height: 80%;
+}
+.overlayIMG img {
+  width: 100%;
+  height: 100%;
+  animation: opacity 0.7s ease-out both;
+}
+@keyframes opacity {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 .info {
   min-height: 150px;
@@ -451,11 +472,12 @@ a:hover {
     margin: auto;
     padding: auto;
   }
-  main {
-    margin: 0;
-  }
   header {
     width: 100%;
+  }
+
+  .section {
+    height: 130vh;
   }
   nav ul {
     margin-left: 0;
@@ -481,8 +503,9 @@ a:hover {
     margin-top: 0;
   }
   .photos img {
-    width: 194px;
+    width: 154px;
     margin-top: 10px;
+    min-height: 85px;
   }
   #Connect {
     margin-top: 70px;

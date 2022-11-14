@@ -9,6 +9,7 @@ const overlay = document.querySelector(".blackout");
 const homeBTN = document.querySelector("#Home");
 const dropdown = document.querySelector(".dropdown");
 const goUp = document.querySelector(".goUp");
+const popup = document.querySelector(".popup");
 let recaptcha = false;
 let num1;
 let num2;
@@ -24,7 +25,8 @@ homeBTN.addEventListener("click", () => {
   dropdown.classList.toggle("inactiveHidden");
 });
 accept.addEventListener("click", () => {
-  overlay.remove();
+  overlay.style.display = "none";
+  popup.remove();
 });
 submitBTN.addEventListener("click", (e) => {
   if (!recaptcha) {
@@ -87,4 +89,17 @@ result.addEventListener("keyup", (e) => {
     submitBTN.classList.add("inactive");
     submitBTN.style.cursor = "default";
   }
+});
+const info = (url) => {
+  overlay.style.display = "flex";
+  const imgs = document.createElement("div");
+  imgs.innerHTML = `<img src="${url}"/>`;
+  imgs.classList.add("overlayIMG");
+  overlay.appendChild(imgs);
+  document.body.style.overflowY = "hidden";
+};
+overlay.addEventListener("click", () => {
+  overlay.style.display = "none";
+  overlay.innerHTML = "";
+  document.body.style.overflowY = "auto";
 });

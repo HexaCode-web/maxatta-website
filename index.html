@@ -67,8 +67,8 @@
             <a id="Home">Home</a>
             <div class="outline inactive"></div>
           </li>
-          <li class="ListItem"><a href="#investors">Investors</a></li>
           <li class="ListItem"><a href="#Connect">Connect</a></li>
+          <li class="ListItem"><a href="#investors">Investors</a></li>
           <li class="ListItem"><a href="#AboutUs">About Us</a></li>
         </ul>
       </nav>
@@ -124,11 +124,15 @@
             <div class="box"><p>Action Insight</p></div>
           </div>
           <div class="photos">
-            <img src="images/first.jpg" />
-            <img class="arrow" src="images/25426.png" />
-            <img src="images/second.jpg" />
-            <img class="arrow" src="images/25426.png" />
-            <img src="images/third.jpg" style="margin-left: 15px" />
+            <img src="images/first.jpg" onclick="info(`images/first.jpg`)" />
+            <img draggable="false" class="arrow" src="images/25426.png" />
+            <img src="images/second.jpg" onclick="info(`images/second.jpg`)" />
+            <img draggable="false" class="arrow" src="images/25426.png" />
+            <img
+              src="images/third.jpg"
+              onclick="info(`images/third.jpg`)"
+              style="margin-left: 15px"
+            />
           </div>
         </div>
       </div>
@@ -216,7 +220,6 @@
         <a href="#"><img src="images/twitter.jpg" alt="" /></a>
       </div>
     </div>
-    </main>
     <footer>
       <div class="footerContent">
         <ul>
@@ -240,6 +243,8 @@
         </ul>
       </div>
     </footer>
-    <div class="goUp inactiveHidden"><a href="#Head"><img src="images/scrolltothetop.png" alt=""></div></a>
+    <div class="goUp inactiveHidden">
+      <a href="#Head"><img src="images/scrolltothetop.png" alt="" /></a>
+    </div>
   </body>
 </html>
