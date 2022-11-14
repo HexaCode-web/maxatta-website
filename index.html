@@ -29,7 +29,7 @@
     <script src="main.js" defer></script>
     <script src="mainPage.js" defer></script>
   </head>
-  <body>
+  <body id="Head">
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
@@ -56,9 +56,15 @@
     <header>
       <nav>
         <div class="logo"><img src="images/logo.png" /></div>
+        <div class="dropdown inactiveHidden">
+          <ul class="dropdownContents">
+            <li><a href="#moreInfo">Front Office</a></li>
+            <li><a href="#moreInfo2">DeskOS</a></li>
+          </ul>
+        </div>
         <ul>
           <li class="ListItem">
-            <a href="#Home">Home</a>
+            <a id="Home">Home</a>
             <div class="outline inactive"></div>
           </li>
           <li class="ListItem"><a href="#investors">Investors</a></li>
@@ -210,19 +216,6 @@
         <a href="#"><img src="images/twitter.jpg" alt="" /></a>
       </div>
     </div>
-    <main>
-      <div class="section" id="PrivacyPolicy">
-        <h1 class="headline">Privacy Policy</h1>
-        <p>XXX</p>
-        <p>XX</p>
-        <p>XXX</p>
-      </div>
-      <div class="section" id="TermsofService">
-        <h1 class="headline">Terms of Service</h1>
-        <p>XXX</p>
-        <p>XX</p>
-        <p>XXX</p>
-      </div>
     </main>
     <footer>
       <div class="footerContent">
@@ -238,14 +231,15 @@
             ><span class="separator"> | </span>
           </li>
           <li class="SecondListItems">
-            <a href="#PrivacyPolicy">Privacy Policy</a
+            <a href="./PrivacyPolicy.html">Privacy Policy</a
             ><span class="separator"> | </span>
           </li>
           <li class="SecondListItems">
-            <a href="#TermsofService">Terms of Service</a>
+            <a href="./TermsofService.html">Terms of Service</a>
           </li>
         </ul>
       </div>
     </footer>
+    <div class="goUp inactiveHidden"><a href="#Head"><img src="images/scrolltothetop.png" alt=""></div></a>
   </body>
 </html>

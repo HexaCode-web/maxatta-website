@@ -6,9 +6,23 @@ const submitBTN = document.querySelector("#submit");
 const statusMSG = document.querySelector(".status");
 const accept = document.querySelector(".Accept");
 const overlay = document.querySelector(".blackout");
+const homeBTN = document.querySelector("#Home");
+const dropdown = document.querySelector(".dropdown");
+const goUp = document.querySelector(".goUp");
 let recaptcha = false;
 let num1;
 let num2;
+document.addEventListener("scroll", () => {
+  if (document.body.getBoundingClientRect().top < -2625) {
+    goUp.classList.remove("inactiveHidden");
+  } else {
+    goUp.classList.add("inactiveHidden");
+  }
+});
+homeBTN.addEventListener("click", () => {
+  homeBTN.appendChild(dropdown);
+  dropdown.classList.toggle("inactiveHidden");
+});
 accept.addEventListener("click", () => {
   overlay.remove();
 });
