@@ -4,9 +4,14 @@ const num2EL = document.querySelector(".Snumber");
 const result = document.querySelector(".result");
 const submitBTN = document.querySelector("#submit");
 const statusMSG = document.querySelector(".status");
+const accept = document.querySelector(".Accept");
+const overlay = document.querySelector(".blackout");
 let recaptcha = false;
 let num1;
 let num2;
+accept.addEventListener("click", () => {
+  overlay.remove();
+});
 submitBTN.addEventListener("click", (e) => {
   if (!recaptcha) {
     statusMSG.innerHTML = "Invalid captcha";
