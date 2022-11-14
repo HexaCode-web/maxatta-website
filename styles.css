@@ -196,6 +196,7 @@ p {
   gap: 15px;
 }
 .links img {
+  border-radius: 15px;
   width: 59px;
 }
 .info p {
