@@ -155,8 +155,8 @@ main {
   display: flex;
   flex-direction: column;
   height: 90%;
-  margin-left: 25%;
-  width: 75%;
+  margin: 0 auto;
+  width: 80%;
   gap: 100px;
 }
 .content {
@@ -165,7 +165,6 @@ main {
 }
 .section {
   height: 100vh;
-  text-align: center;
 }
 #Connect {
   margin-bottom: 250px;
@@ -284,7 +283,6 @@ a {
   display: none;
 }
 form {
-  margin: 0 auto;
   height: 250px;
   max-width: 500px;
   grid-gap: 20px;
