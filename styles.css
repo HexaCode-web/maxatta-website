@@ -474,7 +474,10 @@ a:hover {
   header {
     width: 100%;
   }
-
+  .overlayIMG {
+    width: 90%;
+    height: 50%;
+  }
   .section {
     height: 130vh;
   }
