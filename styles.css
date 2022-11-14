@@ -2,7 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background-color: #0a0a0a;
+  background-image: url(./images/background.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: left;
@@ -95,7 +95,6 @@ nav .logo img {
 }
 nav ul {
   margin-left: auto;
-  margin-right: 40px;
   display: flex;
   list-style: none;
   gap: 35px;
