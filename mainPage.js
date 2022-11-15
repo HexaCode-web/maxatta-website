@@ -12,7 +12,7 @@ const goUp = document.querySelector(".goUp");
 const popup = document.querySelector(".popup");
 const sectionList = Array.from(document.querySelectorAll(".section"));
 let recaptcha = false;
-let position;
+let position = 0;
 let num1;
 let num2;
 sectionList.forEach((section) => {
@@ -39,16 +39,24 @@ const scrollUp = () => {
   if (position === 6) {
     return;
   } else {
-    position++;
-    sectionList[position].scrollIntoView();
+    if (position === 6) {
+      sectionList[position].scrollIntoView();
+    } else {
+      position++;
+      sectionList[position].scrollIntoView();
+    }
   }
 };
 const scrollDown = () => {
-  if (position === -1) {
+  if (position < 0) {
     return;
   } else {
-    position--;
-    sectionList[position].scrollIntoView();
+    if (position === 0) {
+      sectionList[position].scrollIntoView();
+    } else {
+      position--;
+      sectionList[position].scrollIntoView();
+    }
   }
 };
 document.addEventListener("scroll", () => {
@@ -63,6 +71,11 @@ homeBTN.addEventListener("click", () => {
   dropdown.classList.toggle("inactiveHidden");
 });
 accept.addEventListener("click", () => {
+  overlay.addEventListener("click", () => {
+    overlay.style.display = "none";
+    overlay.innerHTML = "";
+    document.body.style.overflowY = "auto";
+  });
   overlay.style.display = "none";
   popup.remove();
 });
@@ -136,8 +149,3 @@ const info = (url) => {
   overlay.appendChild(imgs);
   document.body.style.overflowY = "hidden";
 };
-overlay.addEventListener("click", () => {
-  overlay.style.display = "none";
-  overlay.innerHTML = "";
-  document.body.style.overflowY = "auto";
-});
