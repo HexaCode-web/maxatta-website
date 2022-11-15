@@ -10,9 +10,47 @@ const homeBTN = document.querySelector("#Home");
 const dropdown = document.querySelector(".dropdown");
 const goUp = document.querySelector(".goUp");
 const popup = document.querySelector(".popup");
+const sectionList = Array.from(document.querySelectorAll(".section"));
 let recaptcha = false;
+let position;
 let num1;
 let num2;
+sectionList.forEach((section) => {
+  document.addEventListener("scroll", () => {
+    if (
+      section.getBoundingClientRect().top > -250 &&
+      section.getBoundingClientRect().top < 500
+    )
+      return (position = sectionList.indexOf(section));
+  });
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.code === "PageUp") {
+    scrollDown();
+    e.preventDefault();
+  }
+  if (e.code === "PageDown") {
+    scrollUp();
+    e.preventDefault();
+  }
+});
+const scrollUp = () => {
+  if (position === 6) {
+    return;
+  } else {
+    position++;
+    sectionList[position].scrollIntoView();
+  }
+};
+const scrollDown = () => {
+  if (position === -1) {
+    return;
+  } else {
+    position--;
+    sectionList[position].scrollIntoView();
+  }
+};
 document.addEventListener("scroll", () => {
   if (document.body.getBoundingClientRect().top < -2625) {
     goUp.classList.remove("inactiveHidden");
