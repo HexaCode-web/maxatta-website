@@ -44,22 +44,31 @@
     </div>
     <header>
       <nav>
-        <div class="logo"><img src="images/logo.png" /></div>
+        <div class="logo">
+          <a href="#"><img src="images/logo.png" /></a>
+        </div>
         <div class="dropdown inactiveHidden">
           <ul class="dropdownContents">
-            <li><a href="#moreInfo">Front Office</a></li>
-            <li><a href="#moreInfo2">DeskOS</a></li>
+            <li class="ListItem"><a href="#moreInfo">Front Office</a></li>
+            <li class="ListItem"><a href="#moreInfo2">DeskOS</a></li>
           </ul>
         </div>
-        <ul>
-          <li class="ListItem">
-            <a id="Home">Home</a>
+        <ul id="navItmes"">
+          <li id="Home">
+            <a class="ListItem">Home</a>
             <div class="outline inactive"></div>
           </li>
           <li class="ListItem"><a href="#Connect">Connect</a></li>
           <li class="ListItem"><a href="#investors">Investors</a></li>
           <li class="ListItem"><a href="#AboutUs">About Us</a></li>
+          <li class="ListItem social">
+            <a href="#"><img src="images/linkedin.png" alt="" /></a>
+          </li>
+          <li class="ListItem social">
+            <a href="#"><img src="images/twitter.jpg" alt="" /></a>
+          </li>
         </ul>
+        <div class="links"></div>
       </nav>
     </header>
     <main>
@@ -97,9 +106,9 @@
           application.
         </p>
         <ul>
-          <li>Risk Arbitrage Use Case</li>
-          <li>China Stock Intel Use Cases</li>
-          <li>Emerging Market Debt Use Case</li>
+          <li class="ListItem"><a href="#">Risk Arbitrage Use Case</a></li>
+          <li class="ListItem"><a href="#">China Stock Intel Use Cases</a></li>
+          <li class="ListItem"><a href="#">Emerging Market Debt Use Case</a></li>
         </ul>
       </div>
       <div class="section" id="moreInfo2">
@@ -108,9 +117,9 @@
           <div class="shape">
             <div class="box"><p>Design Intelligence</p></div>
             <img class="arrow" src="images/25426.png" />
-            <div class="box"><p>Deploy Software</p></div>
+            <div class="box"id="Deploy"><p>Deploy Software</p></div>
             <img class="arrow" src="images/25426.png" />
-            <div class="box"><p>Action Insight</p></div>
+            <div class="box"id="Action"><p>Action Insight</p></div>
           </div>
           <div class="photos">
             <img src="images/first.jpg" onclick="info(`images/first.jpg`)" />
@@ -204,10 +213,6 @@
         Maxatta Ltd <br />IDEA Building <br />69 Wilson Street<br />
         London, EC2AA 3AA
       </p>
-      <div class="links">
-        <a href="#"><img src="images/linkedin.png" alt="" /></a>
-        <a href="#"><img src="images/twitter.jpg" alt="" /></a>
-      </div>
     </div>
     <footer>
       <div class="footerContent">

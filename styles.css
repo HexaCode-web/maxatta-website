@@ -3,13 +3,11 @@ html {
 }
 body {
   background-color: #0a0a0a;
-  /* background-color: #202731; */
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: left;
   width: 100vw;
   min-height: 100vh;
-  /* height: 100%; */
   margin: 0px;
   padding: 0px;
   font-family: "Montserrat";
@@ -23,23 +21,27 @@ body::-webkit-scrollbar {
   display: none;
 }
 header {
-  margin-top: 35px;
-  border-bottom: 3px solid #1dee3b;
-}
-header ::before {
-  content: "";
   width: 100%;
-  height: 3px;
-  background-color: #1dee3b;
-  color: #9a9a9a;
-  position: absolute;
-  top: 30px;
-  left: 0;
+}
+.social img {
+  border-radius: 15px;
+  width: 50px;
+}
+nav a:hover {
+  border: none;
 }
 nav {
+  position: fixed;
   align-items: center;
   display: flex;
+  padding-right: 20px;
+  background-color: black;
+  width: 100%;
+  border-bottom: 3px solid #1dee3b;
+  border-top: 3px solid #1dee3b;
+  z-index: 1000;
 }
+
 nav .logo img {
   margin-left: 5px;
   width: 150px;
@@ -100,6 +102,7 @@ nav ul {
   display: flex;
   list-style: none;
   gap: 35px;
+  align-items: center;
   font-size: 1.2rem;
   min-height: 26px;
   font-weight: 500;
@@ -115,7 +118,7 @@ nav ul {
   height: 41px;
   border: 1px solid #1dee3b;
   position: absolute;
-  transform: translate(-20px, 5px);
+  transform: translate(-27px, 44px);
   padding: 5px;
   /* z-index: 100; */
   animation: scaleFromTop 0.5s ease-in-out both;
@@ -129,12 +132,6 @@ nav ul {
     transform: scaleY(1), translate(-20px, 5px);
     opacity: 1;
   }
-}
-.dropdown::before,
-.dropdownContents::before,
-.dropdown li::before,
-.dropdown a::before {
-  display: none;
 }
 .dropdownContents {
   font-size: 0.9rem;
@@ -166,6 +163,7 @@ main {
   padding-bottom: 10px;
 }
 .section {
+  padding-top: 100px;
   height: 100vh;
 }
 #Connect {
@@ -189,8 +187,10 @@ p {
   list-style: none;
   font-weight: 500;
   font-size: 1.2rem;
-  line-height: 3rem;
   padding: 0;
+}
+#moreInfo .ListItem {
+  margin-bottom: 15px;
 }
 #moreInfo2 .shape {
   display: flex;
@@ -256,16 +256,7 @@ p {
   border: 3px solid #1dee3b;
   align-items: center;
 }
-.links {
-  transform: translateY(30px);
-  display: flex;
-  flex-direction: row;
-  gap: 15px;
-}
-.links img {
-  border-radius: 15px;
-  width: 59px;
-}
+
 .info p {
   transform: translateY(-15px);
   font-weight: 600;
@@ -288,12 +279,20 @@ a {
   color: white;
   text-decoration: none;
 }
+.ListItem {
+  width: fit-content;
+}
+.ListItem a:hover {
+  border: none;
+}
+
 .outline,
 .SecondOutline {
   width: 100%;
   height: 1px;
   background-color: #1dee3b;
   animation: appear 0.2s ease-out both;
+  transform-origin: 100% 50%;
 }
 .outline::before {
   height: 0px;
@@ -360,7 +359,7 @@ input[type="submit"]:hover {
   color: #1b1c1e;
 }
 #recaptcha {
-  margin: 0 auto;
+  margin-right: 30%;
   width: 70%;
   height: 50px;
   background-color: #c9c9c9;
@@ -457,6 +456,44 @@ a:hover {
 .goUp img {
   width: 100px;
 }
+@media (max-width: 801px) {
+  nav ul {
+    margin-left: auto;
+    gap: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+  }
+  .logo,
+  .logo img {
+    max-width: 100px;
+  }
+  .social img {
+    width: 50px;
+  }
+  .overlayIMG {
+    width: 90%;
+    height: 50%;
+  }
+  .shapeContainer {
+    display: flex;
+  }
+  .shape {
+    flex-direction: column;
+  }
+  #moreInfo2 .arrow {
+    width: 84px;
+    height: 83px;
+    transform: rotate(90deg);
+  }
+  #moreInfo2 .box {
+    min-width: 152px;
+    align-items: center;
+  }
+  .photos {
+    flex-direction: column;
+    margin-top: 0;
+  }
+}
 @media screen and (max-width: 450px) {
   html {
     overflow-x: hidden;
@@ -473,8 +510,12 @@ a:hover {
     margin: auto;
     padding: auto;
   }
-  header {
-    width: 100%;
+  .social img {
+    width: 32px;
+  }
+  #Action p,
+  #Deploy p {
+    width: 80%;
   }
   .overlayIMG {
     width: 90%;
@@ -484,9 +525,18 @@ a:hover {
     height: 130vh;
   }
   nav ul {
-    margin-left: 0;
-    gap: 25px;
-    font-size: 11px;
+    margin-left: auto;
+    gap: 10px;
+    padding-right: 10px;
+    font-size: 9px;
+  }
+  .dropdown {
+    width: 56px;
+    height: 31px;
+    transform: translate(-21px, 33px);
+  }
+  .dropdownContents {
+    font-size: inherit;
   }
   .shapeContainer {
     display: flex;

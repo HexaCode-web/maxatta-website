@@ -11,6 +11,7 @@ const dropdown = document.querySelector(".dropdown");
 const goUp = document.querySelector(".goUp");
 const popup = document.querySelector(".popup");
 const sectionList = Array.from(document.querySelectorAll(".section"));
+const navItemsContainer = document.querySelector("#navItmes");
 let recaptcha = false;
 let position = 0;
 let num1;
@@ -67,7 +68,7 @@ document.addEventListener("scroll", () => {
   }
 });
 homeBTN.addEventListener("click", () => {
-  homeBTN.appendChild(dropdown);
+  navItemsContainer.appendChild(dropdown);
   dropdown.classList.toggle("inactiveHidden");
 });
 accept.addEventListener("click", () => {
