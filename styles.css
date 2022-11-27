@@ -336,7 +336,7 @@ form {
 #LName {
   grid-area: LName;
 }
-#submit {
+.submit {
   grid-area: submit;
 }
 input,
@@ -461,15 +461,39 @@ a:hover {
 /* =========================================================
                     SIGNUP-IN PAGE
 ======================================================== */
-#my-form {
+.loginPage {
+  gap: 0;
+}
+h2 {
+  text-align: center;
+  color: white;
+}
+.SignUpLink {
+  display: inline;
+  cursor: pointer;
+  color: white;
   margin: 0 auto;
-  height: 100vh;
-  max-width: 700px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+#guide {
+  text-align: center;
+  color: white;
+}
+#signin-form {
+  grid-gap: 6px;
+}
+.form {
+  padding: 20px;
+  border: 2px solid #1dee3b;
+  margin: 0 auto;
+  height: 100%;
+  width: 500px;
   grid-template-areas:
-    "UserName UserName"
     "Email Email"
-    "phone phone"
     "password password"
+    "UserName UserName"
+    "phone phone"
     "text text"
     "recaptcha recaptcha"
     "status status"
@@ -486,6 +510,9 @@ a:hover {
 }
 #recaptcha2 {
   width: 100%;
+}
+.hidden {
+  display: none;
 }
 /* =========================================================
                     SIGNUP-IN PAGE

@@ -2,13 +2,16 @@ const reload = document.querySelector("#reload");
 const num1EL = document.querySelector(".Fnumber");
 const num2EL = document.querySelector(".Snumber");
 const result = document.querySelector(".result");
-const submitBTN = document.querySelector("#submit");
 const statusMSG = document.querySelector(".status");
 const accept = document.querySelector(".Accept");
 const overlay = document.querySelector(".blackout-cookies");
 const homeBTN = document.querySelector("#Home");
 const dropdown = document.querySelector(".dropdown");
 const navItemsContainer = document.querySelector("#navItmes");
+const SignUpLink = document.querySelector(".SignUpLink");
+const mySignUpForm = document.querySelector("#signup-form");
+const mySignInForm = document.querySelector("#signin-form");
+const submitBTN = mySignUpForm.querySelector(".submit");
 let userID = 0;
 let level = 1;
 let recaptcha = false;
@@ -98,15 +101,44 @@ result.addEventListener("keyup", (e) => {
     submitBTN.style.cursor = "default";
   }
 });
-
+const SignUpLinkFunction = () => {
+  document.querySelector("h2").innerHTML =
+    "Please fill the form below and we will send you an email if you are accepted!";
+  mySignUpForm.classList.remove("hidden");
+  mySignInForm.classList.add("hidden");
+  document.querySelector("#guide").innerHTML = "already have an account?";
+  SignUpLink.setAttribute("onclick", "SignInLinkFunction()");
+  SignUpLink.innerHTML = "Sign in instead";
+};
+const SignInLinkFunction = () => {
+  document.querySelector("h2").innerHTML =
+    "You aren't Signed in, Please Sign in";
+  mySignUpForm.classList.add("hidden");
+  mySignInForm.classList.remove("hidden");
+  document.querySelector("#guide").innerHTML = "Not a user?";
+  SignUpLink.setAttribute("onclick", "SignUpLinkFunction()");
+  SignUpLink.innerHTML = "Sign up Now";
+};
+//
+//        SIGNIn INFO
+//
+mySignInForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const formData = new FormData(mySignInForm);
+  const userData = {};
+  userData.email = formData.get("email");
+  userData.password = formData.get("password");
+  const DATAJSON = JSON.stringify(userData);
+  console.log(DATAJSON);
+});
 //
 //        SIGNUP INFO
 //
-const myForm = document.querySelector("#my-form");
-myForm.addEventListener("submit", (e) => {
+
+mySignUpForm.addEventListener("submit", (e) => {
   e.preventDefault();
   userID++;
-  const formData = new FormData(document.querySelector("#my-form"));
+  const formData = new FormData(mySignUpForm);
   const userData = {};
   userData.signup = level;
   //   userData.userID = userID;
@@ -115,6 +147,7 @@ myForm.addEventListener("submit", (e) => {
   userData.phone = formData.get("phone");
   userData.password = formData.get("password");
   const DATAJSON = JSON.stringify(userData);
+  console.log(DATAJSON);
   fetch("http://mtgr.rf.gd/users.php", {
     method: "POST",
     headers: {

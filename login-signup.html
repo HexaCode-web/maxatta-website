@@ -49,8 +49,8 @@
         </div>
         <div class="dropdown inactiveHidden">
           <ul class="dropdownContents">
-            <li class="ListItem"><a href="#moreInfo">Front Office</a></li>
-            <li class="ListItem"><a href="#moreInfo2">DeskOS</a></li>
+            <li class="ListItem"><a href="index.html">Front Office</a></li>
+            <li class="ListItem"><a href="index.html">DeskOS</a></li>
           </ul>
         </div>
         <ul id="navItmes"">
@@ -58,35 +58,70 @@
           <a class="ListItem">Home</a>
           <div class="outline inactive"></div>
         </li>
-        <li class="ListItem"><a href="#Connect">Connect</a></li>
-        <li class="ListItem"><a href="#investors">Investors</a></li>
-        <li class="ListItem"><a href="#AboutUs">About Us</a></li>
+        <li class="ListItem"><a href="index.html">Connect</a></li>
+        <li class="ListItem"><a href="index.html">Investors</a></li>
+        <li class="ListItem"><a href="index.html">About Us</a></li>
         <li class="ListItem social">
-          <a href="#"><img src="images/linkedin.png" alt="" /></a>
+          <a href=""><img src="images/linkedin.png" alt="" /></a>
         </li>
         <li class="ListItem social">
-          <a href="#"><img src="images/twitter.jpg" alt="" /></a>
+          <a href=""><img src="images/twitter.jpg" alt="" /></a>
         </li>
         <div class="links"></div>
       </nav>
     </header>
-    <main>
-      <form class="form" id="my-form">
-        <div class="item" id="UserName">
-          <label for="UserName">Your Name:</label>
-          <input type="text" name="UserName" id="UserName" required />
-        </div>
+    <main class="loginPage">
+      <h2>You aren't Signed in, Please Sign in</h2>
+      <form class="form" id="signin-form">
         <div class="item" id="Email">
-          <label for="email">Your Email:</label>
-          <input type="email" name="email" id="email" required />
-        </div>
-        <div class="item" id="phone">
-          <label for="phone">Your Phone:</label>
-          <input type="text" name="phone" id="phone" required />
+          <input type="email" name="email" required placeholder="Email" />
         </div>
         <div class="item" id="password">
-          <label for="password">Password:</label>
-          <input type="password" name="password" id="password" required />
+          <input
+            type="password"
+            name="password"
+            required
+            placeholder="Password"
+          />
+        </div>
+        <input type="submit" class="submit" name="submit" value="sign in" />
+      </form>
+      <form class="form hidden" id="signup-form">
+        <div class="item" id="UserName">
+          <input
+            type="text"
+            name="UserName"
+            id="UserName"
+            required
+            placeholder="UserName"
+          />
+        </div>
+        <div class="item" id="Email">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            placeholder="Email"
+          />
+        </div>
+        <div class="item" id="phone">
+          <input
+            type="text"
+            name="phone"
+            id="phone"
+            required
+            placeholder="Phone"
+          />
+        </div>
+        <div class="item" id="password">
+          <input
+            type="password"
+            name="password"
+            id="password"
+            required
+            placeholder="Password"
+          />
         </div>
         <span class="text">Please Prove That You Aren't A Robot</span>
         <div class="item" id="recaptcha2">
@@ -100,13 +135,16 @@
         <span class="status"></span>
         <input
           type="submit"
-          class="inactive"
-          id="submit"
+          class="submit inactive"
           name="submit"
-          value="Submit"
+          value="Sign up"
           disabled
         />
       </form>
+      <h3 id="guide">Not a user?</h3>
+      <span class="SignUpLink ListItem" onclick="SignUpLinkFunction()"
+        >Sign up Now</span
+      >
     </main>
     <footer>
       <div class="footerContent">
