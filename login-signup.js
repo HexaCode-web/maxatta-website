@@ -15,7 +15,6 @@ const submitBTN = mySignUpForm.querySelector(".submit");
 let userID = 0;
 let level = 1;
 let recaptcha = false;
-let position = 0;
 let num1 = null;
 let num2 = null;
 const cookies = localStorage.getItem("cookies");
@@ -58,7 +57,6 @@ const randomizer = () => {
   if (num1 > num2) {
     sum = num1 - num2;
     if (sum < 0) {
-      debugger;
       num1 = random();
       num2 = random();
       sum = num1 - num2;
@@ -68,16 +66,12 @@ const randomizer = () => {
   } else {
     sum = num2 - num1;
     if (sum < 0) {
-      debugger;
       num1 = random();
       num2 = random();
       sum = num1 - num2;
     }
     num2EL.innerHTML = num1;
     num1EL.innerHTML = num2;
-  }
-  if (sum < 0) {
-    console.log(sum);
   }
 };
 const random = () => {
