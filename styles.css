@@ -491,9 +491,9 @@ h2 {
   width: 500px;
   grid-template-areas:
     "Email Email"
-    "password password"
     "UserName UserName"
     "phone phone"
+    "password password"
     "text text"
     "recaptcha recaptcha"
     "status status"

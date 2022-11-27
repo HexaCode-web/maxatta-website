@@ -142,13 +142,16 @@ mySignUpForm.addEventListener("submit", (e) => {
   userData.password = formData.get("password");
   const DATAJSON = JSON.stringify(userData);
   console.log(DATAJSON);
-  fetch("http://mtgr.rf.gd/users.php", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: DATAJSON,
-  })
+  fetch(
+    "http://mtgr.rf.gd/users.php?fbclid=IwAR0l9pN9GLFYhsismgmEniVO6HMW9dHcK_9h8_DQtGMpuNavviTVwZB8xqk",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: DATAJSON,
+    }
+  )
     .then((res) => res.json())
     .then((data) => console.log(data))
     .catch((error) => console.log(error));
