@@ -5,76 +5,23 @@ const result = document.querySelector(".result");
 const submitBTN = document.querySelector("#submit");
 const statusMSG = document.querySelector(".status");
 const accept = document.querySelector(".Accept");
-const overlay = document.querySelector(".blackout");
-const blackout = document.createElement("div");
+const overlay = document.querySelector(".blackout-cookies");
 const homeBTN = document.querySelector("#Home");
 const dropdown = document.querySelector(".dropdown");
-const goUp = document.querySelector(".goUp");
-const popup = document.querySelector(".popup");
-const sectionList = Array.from(document.querySelectorAll(".section"));
 const navItemsContainer = document.querySelector("#navItmes");
+let userID = 0;
+let level = 1;
 let recaptcha = false;
 let position = 0;
 let num1 = null;
 let num2 = null;
 const cookies = localStorage.getItem("cookies");
 if (cookies) {
-  document.querySelector(".cookies").style.display = "none";
+  overlay.style.display = "none";
 }
 if (!cookies) {
-  document.querySelector(".cookies").style.display = "block";
+  overlay.style.display = "flex";
 }
-sectionList.forEach((section) => {
-  document.addEventListener("scroll", () => {
-    if (
-      section.getBoundingClientRect().top > -250 &&
-      section.getBoundingClientRect().top < 500
-    )
-      return (position = sectionList.indexOf(section));
-  });
-});
-
-document.addEventListener("keydown", (e) => {
-  if (e.code === "PageUp") {
-    scrollDown();
-    e.preventDefault();
-  }
-  if (e.code === "PageDown") {
-    scrollUp();
-    e.preventDefault();
-  }
-});
-const scrollUp = () => {
-  if (position === 6) {
-    return;
-  } else {
-    if (position === 6) {
-      sectionList[position].scrollIntoView();
-    } else {
-      position++;
-      sectionList[position].scrollIntoView();
-    }
-  }
-};
-const scrollDown = () => {
-  if (position < 0) {
-    return;
-  } else {
-    if (position === 0) {
-      sectionList[position].scrollIntoView();
-    } else {
-      position--;
-      sectionList[position].scrollIntoView();
-    }
-  }
-};
-document.addEventListener("scroll", () => {
-  if (document.body.getBoundingClientRect().top < -2625) {
-    goUp.classList.remove("inactiveHidden");
-  } else {
-    goUp.classList.add("inactiveHidden");
-  }
-});
 homeBTN.addEventListener("click", () => {
   navItemsContainer.appendChild(dropdown);
   dropdown.classList.toggle("inactiveHidden");
@@ -151,27 +98,31 @@ result.addEventListener("keyup", (e) => {
     submitBTN.style.cursor = "default";
   }
 });
-const info = (url) => {
-  blackout.classList.add("blackout");
-  blackout.style.display = "flex";
-  const imgs = document.createElement("div");
-  imgs.innerHTML = `<img src="${url}"/>`;
-  imgs.classList.add("overlayIMG");
-  blackout.appendChild(imgs);
-  document.body.appendChild(blackout);
-  document.body.style.overflowY = "hidden";
-};
-blackout.addEventListener("click", () => {
-  blackout.style.display = "none";
-  blackout.innerHTML = "";
-  document.body.style.overflowY = "auto";
-});
+
 //
 //        SIGNUP INFO
 //
-// const myForm = document.querySelector("#my-form");
-// myForm.addEventListener("submit", (e) => {
-//   e.preventDefault();
-//   const formData = new FormData(this);
-//   fetch("http://mtgr.rf.gd/users.php");
-// });
+const myForm = document.querySelector("#my-form");
+myForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  userID++;
+  const formData = new FormData(document.querySelector("#my-form"));
+  const userData = {};
+  userData.signup = level;
+  //   userData.userID = userID;
+  userData.username = formData.get("UserName");
+  userData.email = formData.get("email");
+  userData.phone = formData.get("phone");
+  userData.password = formData.get("password");
+  const DATAJSON = JSON.stringify(userData);
+  fetch("http://mtgr.rf.gd/users.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: DATAJSON,
+  })
+    .then((res) => res.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.log(error));
+});

@@ -46,7 +46,8 @@ nav .logo img {
   margin-left: 5px;
   width: 150px;
 }
-.blackout {
+.blackout,
+.blackout-cookies {
   position: fixed;
   width: 100%;
   top: 0;
@@ -358,7 +359,8 @@ input[type="submit"]:hover {
   background: #fff;
   color: #1b1c1e;
 }
-#recaptcha {
+#recaptcha,
+#recaptcha2 {
   margin-right: 30%;
   width: 70%;
   height: 50px;
@@ -456,6 +458,38 @@ a:hover {
 .goUp img {
   width: 100px;
 }
+/* =========================================================
+                    SIGNUP-IN PAGE
+======================================================== */
+#my-form {
+  margin: 0 auto;
+  height: 100vh;
+  max-width: 700px;
+  grid-template-areas:
+    "UserName UserName"
+    "Email Email"
+    "phone phone"
+    "password password"
+    "text text"
+    "recaptcha recaptcha"
+    "status status"
+    "submit submit";
+}
+#UserName {
+  grid-area: UserName;
+}
+#phone {
+  grid-area: phone;
+}
+#password {
+  grid-area: password;
+}
+#recaptcha2 {
+  width: 100%;
+}
+/* =========================================================
+                    SIGNUP-IN PAGE
+======================================================== */
 @media (max-width: 801px) {
   nav ul {
     margin-left: auto;
